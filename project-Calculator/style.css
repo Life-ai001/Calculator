@@ -21,7 +21,7 @@ body{
     justify-content: center;
 }
 
-.warpper{
+.wrapper{
     backdrop-filter: blur(5.5px);
     -webkit-backdrop-filter: blur(5.5px);
     border-radius: 16px;
@@ -59,7 +59,7 @@ body{
 
 .calc-button{
     background-blend-mode: blur(5.5px);
-    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
     background-color: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.01);
     border-radius: 16px;
@@ -73,7 +73,7 @@ body{
 
 .calc-button:last-child{
     background-blend-mode: blur(5.5px);
-    backdrop-filter:blur(5.5px);
+    -webkit-backdrop-filter:blur(5.5px);
     background-color: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.01);
     border-radius: 16px;
