@@ -37,7 +37,7 @@ function handleSymbol(symbol) {
       }
       break;
     case "+":
-    case "-":
+    case "−":
     case "×":
     case "÷":
       handleMath(symbol);
@@ -46,16 +46,11 @@ function handleSymbol(symbol) {
 }
 
 function handleMath(symbol) {
-  if (buffer === "0" && symbol === "-") {
-    buffer = "-";
-    return;
+  // Fix: Handle "-" at the beginning of a new operation correctly
+  if (buffer === "0") {
+    return; // Stop further processing
   }
-
-  if (buffer.startsWith("-")) {
-    buffer = buffer.substring(1); // Remove the negative sign
-  }
-
-  const intBuffer = parseFloat(buffer);
+  const intBuffer = parseInt(buffer);
 
   if (runningTotal === 0) {
     runningTotal = intBuffer;
@@ -69,7 +64,7 @@ function handleMath(symbol) {
 function flushOperation(intBuffer) {
   if (previousOperator === "+") {
     runningTotal += intBuffer;
-  } else if (previousOperator === "-") {
+  } else if (previousOperator === "−") {
     runningTotal -= intBuffer;
   } else if (previousOperator === "×") {
     runningTotal *= intBuffer;
